@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to right, rgb(72, 0, 72), rgb(192, 72, 72));
+}
+
+main {
+  max-width: 980px;
+  position: relative;
+  margin: 0px auto;
+  padding: 2rem;
+}
+
+main .box .glass {
+  position: absolute;
+  height: calc(30px * var(--i));
+  width: calc(30px * var(--i));
+  z-index: -1;
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.1);
+  animation-name: moving;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-delay: calc(-1s * var(--i));
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.2)
+    rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.1);
+  border-image: initial;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+main .box .glass:nth-child(1) {
+  top: -30px;
+  right: 30px;
+}
+
+main .box .glass:nth-child(2) {
+  bottom: 130px;
+  right: -20px;
+}
+
+main .box .glass:nth-child(3) {
+  top: 100px;
+  left: -50px;
+}
+
+main .box .glass:nth-child(4) {
+  left: 90px;
+  bottom: -50px;
+}
+
+main .box .glass:nth-child(5) {
+  left: -100px;
+  top: -150px;
+}
+
+@keyframes moving {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+main .box form {
+  max-height: 500px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  backdrop-filter: blur(3px);
+  box-shadow: rgba(0, 0, 0, 0.27) -1px 10px 5px 0px;
+  width: 350px;
+  max-width: 350px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.2)
+    rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.1);
+  border-image: initial;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 1rem 1rem 3rem;
+}
+
+main .box form h1 {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin: 2rem auto;
+}
+
+main .box form input {
+  font-size: 14px;
+  width: 100%;
+  color: whitesmoke !important;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  margin: 1rem auto;
+  border-width: initial !important;
+  border-style: none !important;
+  border-color: initial !important;
+  border-image: initial !important;
+  outline: none !important;
+}
+
+main .box form input[type*="submit"] {
+  display: block;
+  width: 40%;
+  text-align: center;
+  transition: transform 300ms ease;
+}
+main .box form input[type*="submit"]:hover {
+  transform: scale(1.1);
+}
+
+main .box form p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  margin: 1rem auto;
+}
+
+main .box form input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+main .box form p a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-decoration: none;
+}
